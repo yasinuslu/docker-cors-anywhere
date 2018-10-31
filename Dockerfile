@@ -1,9 +1,13 @@
 FROM node:alpine
 
-COPY . /opt/app
+EXPOSE 80
 
-WORKDIR /opt/app
+WORKDIR /app
 
-RUN yarn install
+COPY package.json yarn.lock /app/
 
-CMD ["node", "index"]
+RUN yarn install --production
+
+COPY . /app
+
+CMD ["yarn", "start"]
