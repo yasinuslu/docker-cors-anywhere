@@ -6,7 +6,8 @@ const PORT = 80;
 cors_proxy.createServer({
     originWhitelist: [], // Allow all origins
     requireHeader: ['origin', 'x-requested-with'],
-    removeHeaders: ['cookie', 'cookie2']
+    removeHeaders: ['cookie', 'cookie2'],
+    httpProxyOptions: { xfwd: false }
 }).listen(PORT, HOST, function() {
     console.log('Running CORS Anywhere on ' + HOST + ':' + PORT);
 });

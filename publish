@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker build -t yasinuslu/cors-anywhere:latest .
-docker push yasinuslu/cors-anywhere:latest
+docker build -t yasinuslu/cors-anywhere:no-xfwd .
+docker push yasinuslu/cors-anywhere:no-xfwd
